@@ -1,18 +1,18 @@
 @echo off
-set RunningVersion=1.07
+set RunningVersion=1.08
 :CheckForUpdate
-curl https://raw.githubusercontent.com/404nf77/tubesim/main/Version > ver.txt
-set /p Version=<"ver.txt"
-del ver.txt
-if %version%==%RunningVersion% (goto start) else (goto update)
+set /p Version=https://raw.githubusercontent.com/404nf77/tubesim/main/Version
+if %Version%==%RunningVersion% (goto start) else (goto update)
 
 
 :update
 cls
-echo You need an update!
+title Update
 echo You are running version %RunningVersion% but the latest version is %Version%!
-pause >nul
+echo.
 echo Press any button to update the game!
+pause >nul
+
 
 :UAG
 start updater.bat
