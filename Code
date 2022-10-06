@@ -1,7 +1,8 @@
 @echo off
-set RunningVersion=1.08
+title TubeLife
+set RunningVersion=1.09
 :CheckForUpdate
-set /p Version=https://raw.githubusercontent.com/404nf77/tubesim/main/Version
+set Version=https://raw.githubusercontent.com/404nf77/tubesim/main/Version
 if %Version%==%RunningVersion% (goto start) else (goto update)
 
 
