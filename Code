@@ -1,8 +1,10 @@
 @echo off
 title TubeLife
-set RunningVersion=1.10
+set RunningVersion=1.11
 :CheckForUpdate
-set Version=curl https://raw.githubusercontent.com/404nf77/tubesim/main/Version
+curl https://raw.githubusercontent.com/404nf77/tubesim/main/Version > ver.gdf
+set Version=<ver.gdf
+del ver.gdf
 if %Version%==%RunningVersion% (goto start) else (goto update)
 
 
