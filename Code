@@ -7,9 +7,10 @@ if %version%==%RunningVersion% (goto start) else (goto update)
 del ver.txt
 
 :update
+cls
 echo You need an update!
 echo You are running version %RunningVersion% but the latest version is %Version%!
-pause <nul
+pause >nul
 Press any button to update the game!
 
 :UAG
