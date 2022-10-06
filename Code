@@ -1,0 +1,39 @@
+@echo off
+set RunningVersion=1.04
+:CheckForUpdate
+curl https://raw.githubusercontent.com/404nf77/tubesim/main/Version > ver.txt
+set /p Version=<"ver.txt"
+if %version%==%RunningVersion% (goto start) else (goto update)
+del ver.txt
+
+:update
+echo You need an update!
+echo You are running version %RunningVersion% but the latest version is %Version%!
+pause <nul
+Press any button to update the game!
+
+:UAG
+start updater.exe
+exit
+
+:start
+cls
+if exist Data/Saves/userauto.save (goto load) else (goto setup)
+
+:setup
+cls
+title Youtube Sim
+set /p username=What is your username? 
+echo %username%>> Data/Saves/userauto.save
+echo 0>> Data/Saves/subauto.save
+
+:load
+cls
+set /p username=<"Data/Saves/userauto.save"
+set /p subscribers=<"Data/Saves/subauto.save"
+goto home
+
+:home
+cls
+echo Welcome, %username%
+echo You currently have %subscribers%subs!
