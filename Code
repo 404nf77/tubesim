@@ -1,5 +1,5 @@
 @echo off
-set RunningVersion=1.04
+set RunningVersion=1.05
 :CheckForUpdate
 curl https://raw.githubusercontent.com/404nf77/tubesim/main/Version > ver.txt
 set /p Version=<"ver.txt"
