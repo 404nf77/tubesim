@@ -42,3 +42,4 @@ goto home
 cls
 echo Welcome, %username%
 echo You currently have %subscribers%subs!
+pause >nul
