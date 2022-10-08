@@ -1,6 +1,6 @@
 @echo off
 title TubeLife
-set RunningVersion=1.14
+set RunningVersion=1.15
 :CheckForUpdate
 curl https://raw.githubusercontent.com/404nf77/tubesim/main/Version > ver.txt
 set /p Version=<ver.txt
@@ -42,4 +42,6 @@ goto home
 cls
 echo Welcome, %username%
 echo You currently have %subscribers% subscribers!
+echo.
+echo Choose actions below:
 pause >nul
